@@ -44,7 +44,11 @@ def knn_impute_by_item(matrix, valid_data, k):
     # TODO:                                                             #
     # Implement the function as described in the docstring.             #
     #####################################################################
-    acc = None
+    nbrs = KNNImputer(n_neighbors=k)
+    # We use NaN-Euclidean distance measure.
+    mat = (nbrs.fit_transform(matrix.T)).T
+    acc = sparse_matrix_evaluate(valid_data, mat)
+    print("Validation Accuracy: {}".format(acc))
     #####################################################################
     #                       END OF YOUR CODE                            #
     #####################################################################
@@ -67,7 +71,43 @@ def main():
     # the best performance and report the test accuracy with the        #
     # chosen k*.                                                        #
     #####################################################################
-    pass
+    # init parameters
+    fig, (ax1, ax2) = plt.subplots(1, 2)
+    ks = [1, 6, 11, 16, 21, 26]
+
+    # knn_impute_by_user
+    print("\nknn_impute_by_user:")
+    accs = []
+    # KNN
+    for k in ks:
+        accs.append(knn_impute_by_user(sparse_matrix, val_data, k))
+    # plot
+    ax1.plot(ks, accs, 'bo-')
+    ax1.set_xlabel("k")
+    ax1.set_ylabel("Accuracy")
+    # report argmax k* and test result
+    max_acc_idx = np.argmax(accs)
+    max_k = ks[max_acc_idx]
+    test_acc = knn_impute_by_user(sparse_matrix, test_data, max_k)
+    print("Chosen argmax k*:", max_k, ", Test accuracy:", test_acc)
+
+    # knn_impute_by_item
+    print("\nknn_impute_by_item:")
+    accs = []
+    # KNN
+    for k in ks:
+        accs.append(knn_impute_by_item(sparse_matrix, val_data, k))
+    # plot
+    ax2.plot(ks, accs, 'bo-')
+    ax2.set_xlabel("k")
+    ax2.set_ylabel("Accuracy")
+    # report argmax k* and test result
+    max_acc_idx = np.argmax(accs)
+    max_k = ks[max_acc_idx]
+    test_acc = knn_impute_by_user(sparse_matrix, test_data, max_k)
+    print("Chosen argmax k*:", max_k, ", Test accuracy:", test_acc)
+
+    plt.show()
     #####################################################################
     #                       END OF YOUR CODE                            #
     #####################################################################
