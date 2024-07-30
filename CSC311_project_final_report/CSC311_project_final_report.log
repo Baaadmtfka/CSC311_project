@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.26)  30 JUL 2024 15:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.26)  30 JUL 2024 18:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -329,23 +329,45 @@ File: knn_impute_by_item_test.png Graphic file (type png)
 <use knn_impute_by_item_test.png>
 Package pdftex.def Info: knn_impute_by_item_test.png  used on input line 59.
 (pdftex.def)             Requested size: 345.0pt x 18.79617pt.
- [2 <./knn_impute_by_item_result.png> <./knn_impute_by_item_plot.png> <./knn_impute_by_item_test.png>] [3] [4] (./CSC311_project_final_report.aux)
+ [2 <./knn_impute_by_item_result.png> <./knn_impute_by_item_plot.png> <./knn_impute_by_item_test.png>]
+<2(b)1.png, id=42, 146.79843pt x 59.47218pt>
+File: 2(b)1.png Graphic file (type png)
+<use 2(b)1.png>
+Package pdftex.def Info: 2(b)1.png  used on input line 98.
+(pdftex.def)             Requested size: 103.50105pt x 41.93152pt.
+<2(b)2.png, id=43, 362.85562pt x 287.57437pt>
+File: 2(b)2.png Graphic file (type png)
+<use 2(b)2.png>
+Package pdftex.def Info: 2(b)2.png  used on input line 103.
+(pdftex.def)             Requested size: 172.5pt x 136.71333pt.
+<2(c).png, id=44, 290.58563pt x 37.64063pt>
+File: 2(c).png Graphic file (type png)
+<use 2(c).png>
+Package pdftex.def Info: 2(c).png  used on input line 110.
+(pdftex.def)             Requested size: 207.0021pt x 26.81404pt.
+ [3 <./2(b)1.png> <./2(b)2.png>]
+<2(d).png, id=60, 316.18124pt x 316.93407pt>
+File: 2(d).png Graphic file (type png)
+<use 2(d).png>
+Package pdftex.def Info: 2(d).png  used on input line 120.
+(pdftex.def)             Requested size: 207.0021pt x 207.49902pt.
+ [4 <./2(c).png> <./2(d).png>] [5] [6] (./CSC311_project_final_report.aux)
 Package rerunfilecheck Info: File `CSC311_project_final_report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10331 strings out of 475075
- 168888 string characters out of 5780506
- 509571 words of memory out of 5000000
- 31602 multiletter control sequences out of 15000+600000
+ 10369 strings out of 475075
+ 169374 string characters out of 5780506
+ 509576 words of memory out of 5000000
+ 31626 multiletter control sequences out of 15000+600000
  474669 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,8n,77p,395b,434s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{x:/Work/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on CSC311_project_final_report.pdf (4 pages, 181275 bytes).
+ 72i,8n,77p,395b,437s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{x:/Work/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on CSC311_project_final_report.pdf (6 pages, 213361 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 71 compressed objects within 1 object stream
- 19 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 127 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
+ 29 named destinations out of 1000 (max. 500000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

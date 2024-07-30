@@ -6,7 +6,7 @@
 \usepackage{subcaption} % for subfigures
 
 \title{CSC311 Project Final Report}
-\author{Group Members: \\ Zixuan Zeng 1008533419}
+\author{Group Members: \\ Zixuan Zeng 1008533419 \\ \\ }
 
 \begin{document}
 
@@ -75,29 +75,55 @@ The test accuracy for the user-based method (0.6842) is higher than that for the
 
 \subsection*{2.(a)}
 
-Given the probability that student $i$ correctly answers question $j$ as:
-
 \[
-p(c_{ij} = 1 | \theta_i, \beta_j) = \frac{\exp(\theta_i - \beta_j)}{1 + \exp(\theta_i - \beta_j)}
+p(c_{ij} = 1 | \theta_i, \beta_j) = \frac{\exp(\theta_i - \beta_j)}{1 + \exp(\theta_i - \beta_j)} = \sigma(\theta_i - \beta_j)
+\]
+log-likelihood:
+\[
+\log p(C | \theta, \beta) = \sum_{i}\sum_{j} \left[ c_{ij} (\theta_i - \beta_j) - \log (1 + \exp(\theta_i - \beta_j)) \right]
+\]
+The derivative of the log-likelihood with respect to $\theta_i$:
+\[
+\frac{\partial \log p(C | \theta, \beta)}{\partial \theta_i} = \sum_{j} \left[ c_{ij} - \sigma(\theta_i - \beta_j) \right]
+\]
+The derivative of the log-likelihood with respect to $\beta_j$:
+\[
+\frac{\partial \log p(C | \theta, \beta)}{\partial \beta_j} = \sum_{i} \left[ - c_{ij} + \sigma(\theta_i - \beta_j) \right]
 \]
 
-The log-likelihood for all students and questions, given the sparse matrix $C$, is:
+\subsection*{2.(b)}
 
-\[
-\log p(C | \theta, \beta) = \sum_{(i,j) \in \text{observed}} \left[ c_{ij} (\theta_i - \beta_j) - \log (1 + \exp(\theta_i - \beta_j)) \right]
-\]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{2(b)1.png}
+    \caption{Hyper-Parameters}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{2(b)2.png}
+    \caption{Training and Validation Log-Likelihoods vs Iteration}
+\end{figure}
 
-The derivative of the log-likelihood with respect to the ability parameter $\theta_i$ is:
+\subsection*{2.(c)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{2(c).png}
+    \caption{Final Validation \& Test Accuracy}
+\end{figure}
 
-\[
-\frac{\partial \log p(C | \theta, \beta)}{\partial \theta_i} = \sum_{j \in \text{observed}} \left[ c_{ij} - \sigma(\theta_i - \beta_j) \right]
-\]
+\subsection*{2.(d)}
+The three curves are all in S shape, as the sigmoid function. They represent the probability of correct responses as a function of student ability $\theta$.\newline
+It shows that students with a high ability have a high probability of answering correctly.\newline
+Also, question with a high difficulty is skewed to the right, meaning it has a lower probability being answered correctly.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{2(d).png}
+    \caption{Probability of Correct Response vs Theta}
+\end{figure}
 
-The derivative of the log-likelihood with respect to the difficulty parameter $\beta_j$ is:
 
-\[
-\frac{\partial \log p(C | \theta, \beta)}{\partial \beta_j} = \sum_{i \in \text{observed}} \left[ - c_{ij} + \sigma(\theta_i - \beta_j) \right]
-\]
+\newpage
+\section*{Q3}
 
 
 \newpage
