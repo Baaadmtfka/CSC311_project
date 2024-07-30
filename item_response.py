@@ -210,7 +210,6 @@ def main():
     ax2.plot(theta, p_j1, "o", label=f'Question {j1}')
     ax2.plot(theta, p_j2, "o", label=f'Question {j2}')
     ax2.plot(theta, p_j3, "o", label=f'Question {j3}')
-
     ax2.set_xlabel("Theta (Student Ability)")
     ax2.set_xlabel("Probability of Correct Response")
     ax2.legend()
