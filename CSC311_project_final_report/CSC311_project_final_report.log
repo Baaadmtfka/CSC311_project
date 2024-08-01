@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.26)  30 JUL 2024 18:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.26)  1 AUG 2024 00:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -351,23 +351,39 @@ File: 2(d).png Graphic file (type png)
 <use 2(d).png>
 Package pdftex.def Info: 2(d).png  used on input line 120.
 (pdftex.def)             Requested size: 207.0021pt x 207.49902pt.
- [4 <./2(c).png> <./2(d).png>] [5] [6] (./CSC311_project_final_report.aux)
+ [4 <./2(c).png> <./2(d).png>]
+<3(i)(a).png, id=71, 300.3722pt x 61.73062pt>
+File: 3(i)(a).png Graphic file (type png)
+<use 3(i)(a).png>
+Package pdftex.def Info: 3(i)(a).png  used on input line 131.
+(pdftex.def)             Requested size: 241.49895pt x 49.63321pt.
+<3(i)(c)(d).png, id=72, 301.8778pt x 60.225pt>
+File: 3(i)(c)(d).png Graphic file (type png)
+<use 3(i)(c)(d).png>
+Package pdftex.def Info: 3(i)(c)(d).png  used on input line 141.
+(pdftex.def)             Requested size: 241.49895pt x 48.17912pt.
+<3(i)(e).png, id=73, 462.528pt x 346.896pt>
+File: 3(i)(e).png Graphic file (type png)
+<use 3(i)(e).png>
+Package pdftex.def Info: 3(i)(e).png  used on input line 146.
+(pdftex.def)             Requested size: 276.00105pt x 207.01175pt.
+ [5 <./3(i)(a).png> <./3(i)(c)(d).png> <./3(i)(e).png>] [6] [7] (./CSC311_project_final_report.aux)
 Package rerunfilecheck Info: File `CSC311_project_final_report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10369 strings out of 475075
- 169374 string characters out of 5780506
+ 10399 strings out of 475075
+ 169831 string characters out of 5780506
  509576 words of memory out of 5000000
- 31626 multiletter control sequences out of 15000+600000
+ 31644 multiletter control sequences out of 15000+600000
  474669 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,8n,77p,395b,437s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {x:/Work/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><x:/Work/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on CSC311_project_final_report.pdf (6 pages, 213361 bytes).
+Output written on CSC311_project_final_report.pdf (7 pages, 255734 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
- 29 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 151 PDF objects out of 1000 (max. 8388607)
+ 97 compressed objects within 1 object stream
+ 38 named destinations out of 1000 (max. 500000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

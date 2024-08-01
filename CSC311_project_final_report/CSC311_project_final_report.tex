@@ -14,7 +14,7 @@
 
 \section*{Part A}
 
-\section*{Q1}
+\section*{Q1 - KNN}
 
 \subsection*{1.(a)}
 
@@ -71,7 +71,7 @@ The test accuracy for the user-based method (0.6842) is higher than that for the
 
 
 \newpage
-\section*{Q2}
+\section*{Q2 - IRT}
 
 \subsection*{2.(a)}
 
@@ -114,7 +114,7 @@ The derivative of the log-likelihood with respect to $\beta_j$:
 \subsection*{2.(d)}
 The three curves are all in S shape, as the sigmoid function. They represent the probability of correct responses as a function of student ability $\theta$.\newline
 It shows that students with a high ability have a high probability of answering correctly.\newline
-Also, question with a high difficulty is skewed to the right, meaning it has a lower probability being answered correctly.
+Also, question with a high difficulty is skewed to the right, meaning it has a lower probability of being answered correctly.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{2(d).png}
@@ -123,7 +123,36 @@ Also, question with a high difficulty is skewed to the right, meaning it has a l
 
 
 \newpage
-\section*{Q3}
+\section*{Q3 - (i) Option 1: Matrix Factorization}
+
+\subsection*{3(i).(a)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{3(i)(a).png}
+    \caption{SVD: Final Validation \& Test Performance with chosen k\*}
+\end{figure}
+
+\subsection*{3(i).(b)}
+Filling the missing values with averages or zeros does not accurately reflect the data's underlying structure. There will be loss or distorsion of information.
+
+\subsection*{3(i).(c)(d)(e)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{3(i)(c)(d).png}
+    \caption{ALS: Final Validation \& Test Performance with chosen k\*}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{3(i)(e).png}
+    \caption{ALS: Squared-Error Loss vs Iterations}
+\end{figure}
+
+\newpage
+\section*{Q4 - Ensemble}
+
+\subsection*{4}
+
+
 
 
 \newpage

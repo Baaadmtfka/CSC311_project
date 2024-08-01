@@ -1,5 +1,6 @@
 import numpy as np
 from scipy.linalg import sqrtm
+import matplotlib.pyplot as plt
 
 from utils import (
     load_train_csv,
@@ -84,13 +85,23 @@ def update_u_z(train_data, lr, u, z):
     c = train_data["is_correct"][i]
     n = train_data["user_id"][i]
     q = train_data["question_id"][i]
+
+    # gradients
+    error = c - np.dot(u[n], z[q])
+    u_grad = error * -z[q]
+    z_grad = error * -u[n]
+
+    # update user and item latent factors
+    u[n] -= lr * u_grad
+    z[q] -= lr * z_grad
+
     #####################################################################
     #                       END OF YOUR CODE                            #
     #####################################################################
     return u, z
 
 
-def als(train_data, k, lr, num_iteration):
+def als(train_data, val_data, k, lr, num_iteration):
     """Performs ALS algorithm, here we use the iterative solution - SGD
     rather than the direct solution.
 
@@ -113,11 +124,25 @@ def als(train_data, k, lr, num_iteration):
     # TODO:                                                             #
     # Implement the function as described in the docstring.             #
     #####################################################################
-    mat = None
+
+    train_losses = []
+    val_losses = []
+
+    for i in range(num_iteration):
+        u, z = update_u_z(train_data, lr, u, z)
+        if i % 1000 == 0:
+            #print(i)
+            train_loss = squared_error_loss(train_data, u, z)
+            val_loss = squared_error_loss(val_data, u, z)
+            train_losses.append(train_loss)
+            val_losses.append(val_loss)
+
+    mat = np.dot(u, z.T)
+
     #####################################################################
     #                       END OF YOUR CODE                            #
     #####################################################################
-    return mat
+    return train_losses, val_losses, mat
 
 
 def main():
@@ -131,7 +156,27 @@ def main():
     # (SVD) Try out at least 5 different k and select the best k        #
     # using the validation set.                                         #
     #####################################################################
-    pass
+
+    # init parameters
+    ks = [1, 3, 5, 7, 8, 9, 10, 11, 13, 15, 50, 100, 200, 500]
+    mats = []
+    accs = []
+
+    # svd
+    for k in ks:
+        mat = svd_reconstruct(train_matrix, k)
+        mats.append(mat)
+        acc = sparse_matrix_evaluate(val_data, mat)
+        accs.append(acc)
+
+    # results with argmax k*
+    max_acc_idx = np.argmax(accs)
+    test_acc = sparse_matrix_evaluate(test_data, mats[max_acc_idx])
+    print("SVD:"
+          f"\nChosen argmax k*: {ks[max_acc_idx]}, "
+          f"\nValidation accuracy: {accs[max_acc_idx]}, "
+          f"\nTest accuracy: {test_acc}")
+
     #####################################################################
     #                       END OF YOUR CODE                            #
     #####################################################################
@@ -141,7 +186,45 @@ def main():
     # (ALS) Try out at least 5 different k and select the best k        #
     # using the validation set.                                         #
     #####################################################################
-    pass
+
+    # init hyperparameters
+    lr = 0.12
+    num_iteration = 50000
+    ks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    #ks = [6]
+    mats = []
+    accs = []
+    losses = []
+
+    for k in ks:
+        train_losses, val_losses, mat = als(train_data, val_data, k, lr, num_iteration)
+        mats.append(mat)
+        losses.append((train_losses, val_losses))
+        acc = sparse_matrix_evaluate(val_data, mat)
+        accs.append(acc)
+        #train_acc = sparse_matrix_evaluate(train_data, mat)
+        #print(f"k={k}, Training Accuracy={train_acc}")
+        #print(f"k={k}, Validation Accuracy={acc}")
+
+    max_acc_idx = np.argmax(accs)
+    test_acc = sparse_matrix_evaluate(test_data, mats[max_acc_idx])
+    print("ALS:"
+          f"\nChosen argmax k*: {ks[max_acc_idx]},"
+          f"\nValidation Accuracy: {accs[max_acc_idx]}"
+          f"\nTest Accuracy: {test_acc}")
+
+    # plot losses
+    train_loss, val_loss = losses[max_acc_idx]
+    # Computing loss for each iteration is expensive, so once every 1000 iterations.
+    # still takes about 2 mins
+    plt.plot(list(range(num_iteration // 1000)), train_loss, label='Training Loss')
+    plt.plot(list(range(num_iteration // 1000)), val_loss, label='Validation Loss')
+    plt.xlabel('Iterations')
+    plt.ylabel('Squared-Error Loss')
+    plt.title(f'ALS Squared-Error Loss vs Iterations (k={ks[max_acc_idx]})')
+    plt.legend()
+    plt.show()
+
     #####################################################################
     #                       END OF YOUR CODE                            #
     #####################################################################
