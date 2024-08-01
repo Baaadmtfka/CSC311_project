@@ -87,7 +87,7 @@ def update_u_z(train_data, lr, u, z):
     q = train_data["question_id"][i]
 
     # gradients
-    error = c - np.dot(u[n], z[q])
+    error = c - np.dot(u[n].T, z[q])
     u_grad = error * -z[q]
     z_grad = error * -u[n]
 
@@ -156,13 +156,12 @@ def main():
     # (SVD) Try out at least 5 different k and select the best k        #
     # using the validation set.                                         #
     #####################################################################
-
+    # SVD
     # init parameters
     ks = [1, 3, 5, 7, 8, 9, 10, 11, 13, 15, 50, 100, 200, 500]
     mats = []
     accs = []
 
-    # svd
     for k in ks:
         mat = svd_reconstruct(train_matrix, k)
         mats.append(mat)
@@ -186,7 +185,7 @@ def main():
     # (ALS) Try out at least 5 different k and select the best k        #
     # using the validation set.                                         #
     #####################################################################
-
+    # ALS
     # init hyperparameters
     lr = 0.12
     num_iteration = 50000

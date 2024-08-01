@@ -616,6 +616,11 @@ INPUT ./3(i)(e).png
 INPUT 3(i)(e).png
 INPUT ./3(i)(e).png
 INPUT ./3(i)(e).png
+INPUT ./4.png
+INPUT ./4.png
+INPUT 4.png
+INPUT ./4.png
+INPUT ./4.png
 INPUT CSC311_project_final_report.aux
 INPUT ./CSC311_project_final_report.out
 INPUT ./CSC311_project_final_report.out

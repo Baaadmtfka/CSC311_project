@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1722488365 "c:/Users/13356/OneDrive/Documents/UT/CSC311/CSC311_project/CSC311_project_final_report/CSC311_project_final_report.tex" "CSC311_project_final_report.pdf" "CSC311_project_final_report" 1722488366
+["pdflatex"] 1722556227 "c:/Users/13356/OneDrive/Documents/UT/CSC311/CSC311_project/CSC311_project_final_report/CSC311_project_final_report.tex" "CSC311_project_final_report.pdf" "CSC311_project_final_report" 1722556228
   "2(b)1.png" 1722375649 5685 9a7238d5328788ab5609f13400f72b15 ""
   "2(b)2.png" 1722375407 21861 5a9d593e9131362f969f414011ca4699 ""
   "2(c).png" 1722375908 10389 d615ad1d684404ce9faf3c2bba272d07 ""
@@ -7,10 +7,11 @@
   "3(i)(a).png" 1722465385 13242 f2360090075c04339a986caa08da3762 ""
   "3(i)(c)(d).png" 1722488102 14389 12e652f7eb57b8a1a6652ad2b0d35126 ""
   "3(i)(e).png" 1722488087 30358 4af571d01b30477e04f95d7b4ea33820 ""
-  "CSC311_project_final_report.aux" 1722488366 2355 ca5bcce82e2c09a4e805e1489c418e0d "pdflatex"
+  "4.png" 1722556047 31741 694473d973ce378eef67599915ae02eb ""
+  "CSC311_project_final_report.aux" 1722556228 2484 ac29bac5369099f5c2d7b3532087d6c8 "pdflatex"
   "CSC311_project_final_report.out" 0 -1 0 "pdflatex"
-  "CSC311_project_final_report.tex" 1722488364 5229 cbccf41818a3f4d3351285642088bac8 ""
-  "c:/Users/13356/OneDrive/Documents/UT/CSC311/CSC311_project/CSC311_project_final_report/CSC311_project_final_report.tex" 1722488364 5229 cbccf41818a3f4d3351285642088bac8 ""
+  "CSC311_project_final_report.tex" 1722556226 6094 cf4722d8dc98acca242499bcbb031c56 ""
+  "c:/Users/13356/OneDrive/Documents/UT/CSC311/CSC311_project/CSC311_project_final_report/CSC311_project_final_report.tex" 1722556226 6094 cf4722d8dc98acca242499bcbb031c56 ""
   "knn_impute_by_item_plot.png" 1722291943 10313 03a8c88e041a14c3b06442dc1e79e75d ""
   "knn_impute_by_item_result.png" 1722292015 34003 5f3933560922e2672ab398984c7ec1c2 ""
   "knn_impute_by_item_test.png" 1722292902 7075 403367ad700408ce9accf4166f2ce4a5 ""

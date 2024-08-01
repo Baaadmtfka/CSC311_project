@@ -151,7 +151,19 @@ Filling the missing values with averages or zeros does not accurately reflect th
 \section*{Q4 - Ensemble}
 
 \subsection*{4}
-
+Ensemble Process:
+\begin{enumerate}
+    \item For each separate model, create different subsets of the training data of the same size of the original training data by sampling with replacement. 
+    \item Train KNN, IRT, ALS. Report validation accuracy of each model. Use the models to generate predictions for validation and test data.
+    \item Using the three sets of predictions, calculate the mean of predictions.
+    \item Evaluate the ensembled prediction for final ensembled validation and test accuracy.
+\end{enumerate}
+The ensemble does achieve better performance than individual models based on the final accuracy results. Because ensemble approach reduces the variance by combining the three models, which improved generalization.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{4.png}
+    \caption{?}
+\end{figure}
 
 
 
