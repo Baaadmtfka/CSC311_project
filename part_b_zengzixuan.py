@@ -2,6 +2,7 @@ import numpy as np
 from scipy.linalg import sqrtm
 import matplotlib.pyplot as plt
 from scipy.sparse import csr_matrix, coo_matrix
+from matrix_factorization import als as base_als
 import csv
 import os
 
@@ -29,29 +30,6 @@ def load_question_meta_csv(root_dir="./data"):
             subject_ids = eval(row[1])  # Convert string representation of list to list
             question_meta[question_id] = {"subject_ids": subject_ids}
     return question_meta
-
-def load_student_meta_csv(root_dir="./data"):
-    """Load student metadata.
-    :param root_dir: str, path to the student metadata file
-    :return: dict, mapping of user_id to a dictionary of student metadata
-    """
-    path = os.path.join(root_dir, "student_meta.csv")
-    student_meta = {}
-    with open(path, 'r') as f:
-        reader = csv.reader(f)
-        next(reader)  # skip header
-        for row in reader:
-            user_id = int(row[0])
-            if row[1]:
-                gender = int(row[1])  # Assume gender is represented as an integer (0 or 1)
-            else:
-                gender = None
-            if row[3]:
-                premium_pupil = float(row[3])  # Assume premium pupil status is represented as an integer (0 or 1)
-            else:
-                premium_pupil = None
-            student_meta[user_id] = {"gender": gender, "premium_pupil": premium_pupil}
-    return student_meta
 
 def create_subject_matrix(num_questions, num_subjects, data):
     """
@@ -164,7 +142,7 @@ def als(train_data, val_data, k, lr, num_iteration):
     val_losses = []
 
     for i in range(num_iteration):
-        print(i)
+        #print("iteration: ", i)
         u, z, u_s, z_s = update_lf(
             train_data, lr, u, z, u_s, z_s)
         if i % 1000 == 0:
@@ -186,23 +164,15 @@ def main():
     val_data = load_valid_csv("./data")
     test_data = load_public_test_csv("./data")
     question_meta = load_question_meta_csv("./data")
-    student_meta = load_student_meta_csv("./data")
 
     # map questions to their subjects
     train_data["subjects"] = [list(map(int, question_meta[q]["subject_ids"])) for q in train_data["question_id"]]
     val_data["subjects"] = [list(map(int, question_meta[q]["subject_ids"])) for q in val_data["question_id"]]
     test_data["subjects"] = [list(map(int, question_meta[q]["subject_ids"])) for q in test_data["question_id"]]
 
-    # add gender and premium pupil info
-    '''train_data["gender"] = [student_meta[u]["gender"] for u in train_data["user_id"]]
-    val_data["gender"] = [student_meta[u]["gender"] for u in val_data["user_id"]]
-    test_data["gender"] = [student_meta[u]["gender"] for u in test_data["user_id"]]
-    train_data["premium_pupil"] = [student_meta[u]["premium_pupil"] for u in train_data["user_id"]]
-    val_data["premium_pupil"] = [student_meta[u]["premium_pupil"] for u in val_data["user_id"]]
-    test_data["premium_pupil"] = [student_meta[u]["premium_pupil"] for u in test_data["user_id"]]'''
-
+    # Modified ALS
     # Hyperparameters
-    lr = 0.0185
+    lr = 0.022
     num_iteration = 300000
     k = 11
     # Train
@@ -210,11 +180,28 @@ def main():
     # Evaluate
     val_acc = sparse_matrix_evaluate(val_data, mat)
     test_acc = sparse_matrix_evaluate(test_data, mat)
-    print(f"Validation Accuracy: {val_acc}")
-    print(f"Test Accuracy: {test_acc}")
+    print(f"Modified ALS Validation Accuracy: {val_acc}")
+    print(f"Modified ALS Test Accuracy: {test_acc}")
+    plt.plot(train_losses, label='Modified ALS Training Loss')
+    plt.plot(val_losses, label='Modified ALS Validation Loss')
     # Plot training and validation loss
-    plt.plot(train_losses, label='Training Loss')
-    plt.plot(val_losses, label='Validation Loss')
+
+    # Base Model ALS
+    '''lr = 0.012
+    num_iteration = 300000
+    k = 2
+    # Train
+    base_train_losses, base_val_losses, base_mat = base_als(train_data, val_data, k, lr, num_iteration)
+    # Evaluate
+    base_train_losses = [loss / len(train_data["question_id"]) for loss in base_train_losses]
+    base_val_losses = [loss / len(val_data["question_id"]) for loss in base_val_losses]
+    base_val_acc = sparse_matrix_evaluate(val_data, base_mat)
+    base_test_acc = sparse_matrix_evaluate(test_data, base_mat)
+    print(f"Base ALS Validation Accuracy: {base_val_acc}")
+    print(f"Base ALS Test Accuracy: {base_test_acc}")
+    plt.plot(base_train_losses, label='Base ALS Training Loss')
+    plt.plot(base_val_losses, label='Base ALS Validation Loss')'''
+    
     plt.xlabel('Iterations (in thousands)')
     plt.ylabel('avg Loss')
     plt.title('ALS avg Loss')

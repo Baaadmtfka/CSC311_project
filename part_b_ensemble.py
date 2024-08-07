@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.impute import KNNImputer
 
-from part_b_zengzixuan import load_question_meta_csv, load_student_meta_csv, als
+from part_b_zengzixuan import load_question_meta_csv, als
 import part_b_liuhao
 from utils import (
     load_train_csv,
@@ -39,7 +39,7 @@ def knn_impute_by_user_item(matrix, valid_data, k_user, k_item, user_weight=0.5,
     combined_mat = user_weight * user_mat + item_weight * item_mat
 
     acc = sparse_matrix_evaluate(valid_data, combined_mat)
-    print("Validation Accuracy (Hybrid): {}".format(acc))
+    print("Validation Accuracy (Hybrid KNN): {}".format(acc))
     return acc, combined_mat
 
 
@@ -50,7 +50,6 @@ def main():
     val_data = load_valid_csv("./data")
     test_data = load_public_test_csv("./data")
     question_meta = load_question_meta_csv("./data")
-    student_meta = load_student_meta_csv("./data")
     train_data["subjects"] = [list(map(int, question_meta[q]["subject_ids"])) for q in train_data["question_id"]]
     val_data["subjects"] = [list(map(int, question_meta[q]["subject_ids"])) for q in val_data["question_id"]]
     test_data["subjects"] = [list(map(int, question_meta[q]["subject_ids"])) for q in test_data["question_id"]]
@@ -62,13 +61,13 @@ def main():
     knn_test_pred = sparse_matrix_predictions(test_data, knn_mat)
 
     # ALS Matrix Factorization
-    print("Training ALS Matrix Factorization...")
-    lr = 0.0185
+    print("Training Modified ALS Matrix Factorization...")
+    lr = 0.022
     num_iteration = 300000
     k = 11
     train_losses, val_losses, als_mat = als(train_data, val_data, k, lr, num_iteration)
     als_val_acc = sparse_matrix_evaluate(val_data, als_mat)
-    print("Validation Accuracy (ALS): {}".format(als_val_acc))
+    print("Validation Accuracy (Modified ALS): {}".format(als_val_acc))
     als_val_pred = sparse_matrix_predictions(val_data, als_mat)
     als_test_pred = sparse_matrix_predictions(test_data, als_mat)
 
