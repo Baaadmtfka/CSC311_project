@@ -107,6 +107,7 @@ def als(train_data, val_data, k, lr, num_iteration):
 
     :param train_data: A dictionary {user_id: list, question_id: list,
     is_correct: list}
+    :param val_data
     :param k: int
     :param lr: float
     :param num_iteration: int
@@ -190,7 +191,7 @@ def main():
     lr = 0.12
     num_iteration = 50000
     ks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    #ks = [6]
+    #ks = [388]
     mats = []
     accs = []
     losses = []
@@ -218,7 +219,7 @@ def main():
     # still takes about 2 mins
     plt.plot(list(range(num_iteration // 1000)), train_loss, label='Training Loss')
     plt.plot(list(range(num_iteration // 1000)), val_loss, label='Validation Loss')
-    plt.xlabel('Iterations')
+    plt.xlabel('Iterations (in thousands)')
     plt.ylabel('Squared-Error Loss')
     plt.title(f'ALS Squared-Error Loss vs Iterations (k={ks[max_acc_idx]})')
     plt.legend()
