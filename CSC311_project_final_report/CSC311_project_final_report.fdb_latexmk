@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1723069890 "c:/Users/13356/OneDrive/Documents/UT/CSC311/CSC311_project/CSC311_project_final_report/CSC311_project_final_report.tex" "CSC311_project_final_report.pdf" "CSC311_project_final_report" 1723069896
+["pdflatex"] 1723070323 "c:/Users/13356/OneDrive/Documents/UT/CSC311/CSC311_project/CSC311_project_final_report/CSC311_project_final_report.tex" "CSC311_project_final_report.pdf" "CSC311_project_final_report" 1723070330
   "2(b)1.png" 1722375649 5685 9a7238d5328788ab5609f13400f72b15 ""
   "2(b)2.png" 1722375407 21861 5a9d593e9131362f969f414011ca4699 ""
   "2(c).png" 1722375908 10389 d615ad1d684404ce9faf3c2bba272d07 ""
@@ -8,15 +8,15 @@
   "3(i)(c)(d).png" 1722488102 14389 12e652f7eb57b8a1a6652ad2b0d35126 ""
   "3(i)(e).png" 1722977483 31925 e1bea450b162facb786a830235e0ba83 ""
   "4.png" 1722556047 31741 694473d973ce378eef67599915ae02eb ""
-  "CSC311_project_final_report.aux" 1723069892 3665 8b1065776c4dbd0c21730109d17ffd82 "pdflatex"
+  "CSC311_project_final_report.aux" 1723070325 3665 8b1065776c4dbd0c21730109d17ffd82 "pdflatex"
   "CSC311_project_final_report.out" 0 -1 0 "pdflatex"
-  "CSC311_project_final_report.tex" 1723069889 21342 6bb71f20a72ba4bbbac6a582eaeaba86 ""
+  "CSC311_project_final_report.tex" 1723070322 21350 c54546c96a0f7a7600dab988e58d7d4b ""
   "bl1.png" 1723067719 86791 4cdf6fd052f64d288824ec5a52567002 ""
   "bl2.png" 1723067826 35550 227b484387e9d64aa3191c43131e04b9 ""
   "bl3.png" 1723068049 41512 e108a64a102f1dc4240b9c8a173afea3 ""
   "bz1.png" 1723064049 51407 6494282cde979bb4c227a45c2d268e3b ""
   "bz2.png" 1723064066 25211 b2e99a9cdea9ce7ee1078d6e9ff55108 ""
-  "c:/Users/13356/OneDrive/Documents/UT/CSC311/CSC311_project/CSC311_project_final_report/CSC311_project_final_report.tex" 1723069889 21342 6bb71f20a72ba4bbbac6a582eaeaba86 ""
+  "c:/Users/13356/OneDrive/Documents/UT/CSC311/CSC311_project/CSC311_project_final_report/CSC311_project_final_report.tex" 1723070322 21350 c54546c96a0f7a7600dab988e58d7d4b ""
   "knn_impute_by_item_plot.png" 1723045858 14109 c2466e414764fa0e4005aa0f207d0078 ""
   "knn_impute_by_item_result.png" 1722292015 34003 5f3933560922e2672ab398984c7ec1c2 ""
   "knn_impute_by_item_test.png" 1722292902 7075 403367ad700408ce9accf4166f2ce4a5 ""
